@@ -16,6 +16,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.action_2.triggered.connect(self.onAction2)
         self.action_3.triggered.connect(self.onAction3)
         self.horizontalSlider.sliderMoved.connect(self.onSliderMoved)
+        self.hasImageOn = False
 
     def onAction2(self):
         QMessageBox.information(self, "关于", "这是一个用Qt开发的demo", QMessageBox.Ok)
