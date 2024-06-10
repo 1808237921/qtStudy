@@ -1,0 +1,1 @@
+requires pillow==9.3.0
