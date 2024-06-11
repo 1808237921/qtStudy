@@ -1,4 +1,8 @@
+import os
 import sys
+cwd = os.getcwd()
+sys.path.append(cwd)
+
 import SimpleITK as sitk
 import numpy as np
 from PyQt5.QtWidgets import *

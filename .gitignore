@@ -1,3 +1,6 @@
 /__pycache__
 checkpoint_best.pth
 checkpoint_final.pth
+/env
+run.cmd
+pyQt.7z
