@@ -74,6 +74,7 @@ class Window(QMainWindow, Ui_MainWindow):
             QMessageBox.information(self, "提示", "请打开一个nii文件再进行保存原图操作！", QMessageBox.Ok)
             return
         filepath, _ = QFileDialog.getSaveFileName(self, "保存", ".", "jpg文件(*.jpg);; png文件 (*.png)")
+        if filepath == "": return
         image = Image.fromarray(self.data[self.horizontalSlider.value()])
         image.save(filepath)
         
@@ -82,6 +83,7 @@ class Window(QMainWindow, Ui_MainWindow):
             QMessageBox.information(self, "提示", "请进行推理后再进行保存推理后的图片操作！", QMessageBox.Ok)
             return
         filepath, _ = QFileDialog.getSaveFileName(self, "保存", ".", "jpg文件(*.jpg);; png文件 (*.png)")
+        if filepath == "": return
         image = Image.fromarray(self.data_infered[self.horizontalSlider.value()])
         image.save(filepath)
 
