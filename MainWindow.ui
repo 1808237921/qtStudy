@@ -72,6 +72,8 @@
     </property>
     <addaction name="action_3"/>
     <addaction name="action_4"/>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
     <addaction name="action"/>
    </widget>
    <widget class="QMenu" name="menu_2">
@@ -102,6 +104,16 @@
   <action name="action_4">
    <property name="text">
     <string>推理</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>保存原图</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>保存推理后的图像</string>
    </property>
   </action>
  </widget>

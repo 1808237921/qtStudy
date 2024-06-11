@@ -35,6 +35,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.action_2.triggered.connect(self.onAction2)
         self.action_3.triggered.connect(self.onAction3)
         self.action_4.triggered.connect(self.onAction4)
+        self.action_5.triggered.connect(self.onAction5)
+        self.action_6.triggered.connect(self.onAction6)
         self.horizontalSlider.sliderMoved.connect(self.onSliderMoved)
         self.hasImageOn = False
         self.hasInfered = False
@@ -66,6 +68,12 @@ class Window(QMainWindow, Ui_MainWindow):
         image = Image.fromarray(np.uint8(self.data_infered[self.horizontalSlider.value()]))
         self.label_2.setPixmap(image.toqpixmap())
         self.hasInfered = True
+
+    def onAction5(self):
+        pass
+
+    def onAction6(self):
+        pass
 
     def onSliderMoved(self, val):
         if not self.hasImageOn: return
