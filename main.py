@@ -32,20 +32,20 @@ class Window(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.resize(1024, 700)
         self.action.triggered.connect(QApplication.exit)
-        self.action_2.triggered.connect(self.onAction2)
-        self.action_3.triggered.connect(self.onAction3)
-        self.action_4.triggered.connect(self.onAction4)
-        self.action_5.triggered.connect(self.onAction5)
-        self.action_6.triggered.connect(self.onAction6)
+        self.action_2.triggered.connect(self.onAction2Triggered)
+        self.action_3.triggered.connect(self.onAction3Triggered)
+        self.action_4.triggered.connect(self.onAction4Triggered)
+        self.action_5.triggered.connect(self.onAction5Triggered)
+        self.action_6.triggered.connect(self.onAction6Triggered)
         self.horizontalSlider.sliderMoved.connect(self.onSliderMoved)
         self.hasImageOn = False
         self.hasInfered = False
         self.imagePath = None
 
-    def onAction2(self):
+    def onAction2Triggered(self):
         QMessageBox.information(self, "关于", "这是一个用Qt开发的demo", QMessageBox.Ok)
 
-    def onAction3(self):
+    def onAction3Triggered(self):
         filepath, _ = QFileDialog.getOpenFileName(self, "打开", "c:", "nii.gz文件(*.nii.gz);; nii文件 (*.nii)")
         if filepath == "": return
         self.hasImageOn = True
@@ -59,7 +59,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.label_2.setText("等待推理")
         self.hasInfered = False
 
-    def onAction4(self):
+    def onAction4Triggered(self):
         if not self.hasImageOn:
             QMessageBox.information(self, "提示", "请选择一个nii文件再进行推理!", QMessageBox.Ok)
             return
@@ -69,10 +69,10 @@ class Window(QMainWindow, Ui_MainWindow):
         self.label_2.setPixmap(image.toqpixmap())
         self.hasInfered = True
 
-    def onAction5(self):
+    def onAction5Triggered(self):
         pass
 
-    def onAction6(self):
+    def onAction6Triggered(self):
         pass
 
     def onSliderMoved(self, val):
